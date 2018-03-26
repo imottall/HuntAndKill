@@ -5,7 +5,6 @@ import { MazeComponent } from './maze/maze.component';
 
 const appRoutes: Routes = [
   { path: 'maze', component: MazeComponent},
-  { path: ' ', redirectTo: '/maze', pathMatch: 'full' },
   { path: '', redirectTo: '/maze', pathMatch: 'full' }
 ];
 
