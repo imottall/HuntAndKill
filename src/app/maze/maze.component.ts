@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './maze.component.html',
   styleUrls: ['./maze.component.css']
 })
-export class MazeComponent implements OnInit {
+export class MazeComponent {
   size = 11;
   maze: string[][] = new Array();
   mazeString: string[] = new Array();
@@ -13,12 +13,6 @@ export class MazeComponent implements OnInit {
   currentY: number;
 
   constructor() {
-  }
-
-  ngOnInit() {
-    this.initializeMaze();
-    this.createMaze();
-    this.stringifyMaze();
   }
 
   /************
