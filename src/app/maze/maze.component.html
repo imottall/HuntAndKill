@@ -2,7 +2,7 @@
 <div>size (please use a uneven size!):</div>
 <input type="number" class="form-control" [(ngModel)]="size">
 
-<div style="font-family: monospace;" *ngFor="let string of mazeString">
+<div style="font-family: monospace; white-space: pre; line-height: 0.5em" *ngFor="let string of mazeString">
   {{ string }}
 </div>
 

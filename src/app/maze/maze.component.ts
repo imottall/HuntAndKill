@@ -34,8 +34,8 @@ export class MazeComponent {
     let x = 1;
     let y = this.size - 1;
     let loop = true;
-    this.maze[x][y] = '-';
-    this.maze[x][y - 1] = '-';
+    this.maze[x][y] = ' ';
+    this.maze[x][y - 1] = ' ';
 
     while (loop) {
       x = 1;
@@ -45,26 +45,26 @@ export class MazeComponent {
       while (true) {
         if (this.maze[x][y] === '*' && this.isIsland(x, y)) {
           if (x !== this.size - 2) {
-            if (this.maze[x + 2][y] === '-') {
-              this.maze[x + 1][y] = '-';
+            if (this.maze[x + 2][y] === ' ') {
+              this.maze[x + 1][y] = ' ';
               break;
             }
           }
           if (x >= 3) {
-            if (this.maze[x - 2][y] === '-') {
-              this.maze[x - 1][y] = '-';
+            if (this.maze[x - 2][y] === ' ') {
+              this.maze[x - 1][y] = ' ';
               break;
             }
           }
           if (y + 2 <= this.size - 2) {
-            if (this.maze[x][y + 2] === '-') {
-              this.maze[x][y + 1] = '-';
+            if (this.maze[x][y + 2] === ' ') {
+              this.maze[x][y + 1] = ' ';
               break;
             }
           }
           if (y >= 3) {
-            if (this.maze[x][y - 2] === '-') {
-              this.maze[x][y - 1] = '-';
+            if (this.maze[x][y - 2] === ' ') {
+              this.maze[x][y - 1] = ' ';
               break;
             }
           }
@@ -81,7 +81,7 @@ export class MazeComponent {
         }
       }
 
-      this.maze[x][y] = '-';
+      this.maze[x][y] = ' ';
 
       // Create Route
       while (!this.isDeadEnd(x, y)) {
@@ -90,29 +90,29 @@ export class MazeComponent {
         switch (direction) {
           case 0:
             if (x - 2 >= 1 && this.isIsland(x - 2, y)) {
-              this.maze[x - 1][y] = '-';
-              this.maze[x - 2][y] = '-';
+              this.maze[x - 1][y] = ' ';
+              this.maze[x - 2][y] = ' ';
               x -= 2;
             }
             break;
           case 1:
             if (y - 2 >= 1 && this.isIsland(x, y - 2)) {
-              this.maze[x][y - 1] = '-';
-              this.maze[x][y - 2] = '-';
+              this.maze[x][y - 1] = ' ';
+              this.maze[x][y - 2] = ' ';
               y -= 2;
             }
             break;
           case 2:
             if (y + 2 <= this.size - 2 && this.isIsland(x, y + 2)) {
-              this.maze[x][y + 1] = '-';
-              this.maze[x][y + 2] = '-';
+              this.maze[x][y + 1] = ' ';
+              this.maze[x][y + 2] = ' ';
               y += 2;
             }
             break;
           case 3:
             if (x + 2 <= this.size - 2 && this.isIsland(x + 2, y)) {
-              this.maze[x + 1][y] = '-';
-              this.maze[x + 2][y] = '-';
+              this.maze[x + 1][y] = ' ';
+              this.maze[x + 2][y] = ' ';
               x += 2;
             }
             break;
@@ -154,32 +154,32 @@ export class MazeComponent {
     switch (direction) {
       case 'A':
       case 'a':
-        if (this.maze[this.currentX - 1][this.currentY] === '-') {
-          this.maze[this.currentX][this.currentY] = '-';
+        if (this.maze[this.currentX - 1][this.currentY] === ' ') {
+          this.maze[this.currentX][this.currentY] = ' ';
           this.maze[this.currentX - 1][this.currentY] = 'O';
           this.currentX--;
         }
         break;
       case 'W':
       case 'w':
-        if (this.maze[this.currentX][this.currentY - 1] === '-') {
-          this.maze[this.currentX][this.currentY] = '-';
+        if (this.maze[this.currentX][this.currentY - 1] === ' ') {
+          this.maze[this.currentX][this.currentY] = ' ';
           this.maze[this.currentX][this.currentY - 1] = 'O';
           this.currentY--;
         }
         break;
       case 'S':
       case 's':
-        if (this.maze[this.currentX][this.currentY + 1] === '-') {
-          this.maze[this.currentX][this.currentY] = '-';
+        if (this.maze[this.currentX][this.currentY + 1] === ' ') {
+          this.maze[this.currentX][this.currentY] = ' ';
           this.maze[this.currentX][this.currentY + 1] = 'O';
           this.currentY++;
         }
         break;
       case 'D':
       case 'd':
-        if (this.maze[this.currentX + 1][this.currentY] === '-') {
-          this.maze[this.currentX][this.currentY] = '-';
+        if (this.maze[this.currentX + 1][this.currentY] === ' ') {
+          this.maze[this.currentX][this.currentY] = ' ';
           this.maze[this.currentX + 1][this.currentY] = 'O';
           this.currentX++;
         }
