@@ -2,7 +2,7 @@
 <div style="font-family: monospace; white-space: pre; line-height: 0.5em; text-align: center" *ngFor="let string of mazeString">
   {{ string }}
 </div>
-<div style="margin-left: 40%; margin-right: 40%">
+<div style="margin-left: 40%; margin-right: 40%; position:fixed;bottom:40px;left:0;right:0;">
   <div>size:</div>
   <input type="number" class="form-control" [(ngModel)]="size">
   <button (click)="move('W')">A</button>
