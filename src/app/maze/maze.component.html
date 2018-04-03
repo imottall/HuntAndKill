@@ -1,12 +1,13 @@
-<button (click)="newMaze()">gimme a new maze</button>
-<div>size (please use a uneven size!):</div>
-<input type="number" class="form-control" [(ngModel)]="size">
 
-<div style="font-family: monospace; white-space: pre; line-height: 0.5em" *ngFor="let string of mazeString">
+<div style="font-family: monospace; white-space: pre; line-height: 0.5em; text-align: center" *ngFor="let string of mazeString">
   {{ string }}
 </div>
-
-<button (click)="move('W')">A</button>
-<button (click)="move('A')">W</button>
-<button (click)="move('D')">S</button>
-<button (click)="move('S')">D</button>
+<div style="margin-left: 40%; margin-right: 40%">
+  <div>size:</div>
+  <input type="number" class="form-control" [(ngModel)]="size">
+  <button (click)="move('W')">A</button>
+  <button (click)="move('A')">W</button>
+  <button (click)="move('D')">S</button>
+  <button (click)="move('S')">D</button>
+  <button *ngIf="size % 2 != 0" (click)="newMaze()">Give me a new maze please!</button>
+</div>

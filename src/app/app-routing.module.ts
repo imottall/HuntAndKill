@@ -4,8 +4,7 @@ import {RouterModule, Routes} from '@angular/router';
 import { MazeComponent } from './maze/maze.component';
 
 const appRoutes: Routes = [
-  { path: 'maze', component: MazeComponent},
-  { path: '', redirectTo: '/maze', pathMatch: 'full' }
+  { path: 'maze', component: MazeComponent}
 ];
 
 @NgModule({

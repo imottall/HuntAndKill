@@ -1,6 +1,12 @@
-<div style="text-align:center">
-  <h1>
-    Welcome!
-  </h1>
+<nav style="height: 50px" class="navbar navbar-fixed-top navbar-dark bg-inverse">
+  <div class="container">
+    <a class="navbar-brand">aMAZEing</a>
+    <ul class="nav navbar-nav" routerLinkActive="active">
+      <li class="nav-item"><a class="nav-link" routerLink="">Home</a></li>
+      <li class="nav-item"><a class="nav-link" routerLink="maze">Maze</a></li>
+    </ul>
+  </div>
+</nav>
+<div style="margin-top: 60px">
+  <router-outlet></router-outlet>
 </div>
-<router-outlet></router-outlet>

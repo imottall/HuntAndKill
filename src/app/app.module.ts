@@ -5,11 +5,13 @@ import {FormsModule} from '@angular/forms';
 import {AppRoutingModule} from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MazeComponent } from './maze/maze.component';
+import { SolverComponent } from './maze/solver/solver.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MazeComponent
+    MazeComponent,
+    SolverComponent
   ],
   imports: [
     BrowserModule,
